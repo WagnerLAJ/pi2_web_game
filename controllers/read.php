@@ -16,8 +16,8 @@ if ($response->num_rows>0){
         echo "<td>".$row["nivel"]."</td>";
         echo "<td>".$row["pontuacao"]."</td>";
         echo "<td>
-            <button type='button' class='btn btn-success'>Editar</button>
-            <button type='button' class='btn btn-danger'>Excluir</button>
+            <button type='button' class='btn btn-success' onclick=get_id('".$row["id"]."')>Editar</button>
+            <button type='button' class='btn btn-danger' onclick=remove('".$row["id"]."')>Excluir</button>
         </td>";
         echo "</tr>"; 
     }

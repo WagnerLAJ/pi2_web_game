@@ -10,33 +10,34 @@
 <body>
     <div class="containers p-3">
         <div class="card-header bg-secondary">
-            <p style="color: #fff;">Cadastro de Alunos</p>
+            <p style="color: #fff;">Edição de cadastro</p>
         </div>
         <div class="card p-2">
             <div class="row g-3">
                 <div class="col-md-6">
+                    <input class="form-control" id="id" type="text" hidden/>
                     <label for='' class="form-label">Nome</label>
-                    <input class="form-control" id="name" type="text"/>
+                    <input class="form-control" id="name-1" type="text"/>
                 </div>        
                 <div class="col-md-6">
                     <label for='' class="form-label">CPF</label>
-                    <input class="form-control" id="cpf" type="text"/>
+                    <input class="form-control" id="cpf-1" type="text"/>
                 </div>        
                 <div class="col-md-6">
                     <label for='' class="form-label">Nivel</label>
-                    <input class="form-control" id="nivel" type="text"/>
+                    <input class="form-control" id="nivel-1" type="text"/>
                 </div>        
                 <div class="col-md-6">
                     <label for='' class="form-label">Pontuação</label>
-                    <input class="form-control" id="pontuacao" type="text"/>
+                    <input class="form-control" id="pontuacao-1" type="text"/>
                 </div>
                 <div class="mb-3">
                     <input 
                     class="btn btn-success" 
                     id="btn" 
                     type="submit" 
-                    value= "Cadastrar"
-                    onclick="createUser()"/>
+                    value= "Atualizar"
+                    onclick="updateUser()"/>
                 </div> 
                 </div>        
             </div>    
