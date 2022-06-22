@@ -15,13 +15,19 @@ function createUser(){
 //    const url = "http://177.62.79.244:4000/PI2/controllers/cadastro.php";
     const url = "http://187.57.114.226:4000/PI2/controllers/cadastro.php";
 
-
+    if ((name=="")||(cpf=="")||(nivel=="")||(pontuacao=="")) {
+//        console.log("Todos os campos devem estar preenchidos");
+        Swal.fire('Todos os campos devem estar preenchidos');
+      }
+      else {
     fetch(url,{
         method:'POST', 
         body:form
     }).then(response =>{
         response.json().then(result =>{
-            console.log(result)
+            //console.log(result)
+            Swal.fire(result.message)
+
         })
     }).catch(err => console.log(err))
-}
+}}
