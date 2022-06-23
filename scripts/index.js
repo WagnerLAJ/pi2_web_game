@@ -156,3 +156,73 @@ function remove(id){
     })
 
 }
+function verificaLogin(){
+//    console.log("usuario criado")
+
+    const cpf_login=document.getElementById('cpf_login').value;
+    const senha_login=document.getElementById('senha_login').value;
+
+    if(cpf_login=="12345678900"&&senha_login=="1234") {
+        window.location.href = "cadastro.html";
+    }
+/*
+*/
+else {
+    Swal.fire("Senha ou usuário não conferem").then(result =>{
+        if(result.isConfirmed){
+            window.location.href = "login.html";
+        }
+    })
+    }
+}
+function verificaLoginAluno(){
+        console.log("verifica login aluno")
+    
+        const id_login=document.getElementById('id_login').value;
+        const url = "http://187.57.114.226:4000/pi2_web_game/controllers/loginaluno.php";
+    
+        const form = new FormData ();
+        form.append('id_login',id_login);
+    
+        if ((id_login=="")) {
+    //        console.log("Todos os campos devem estar preenchidos");
+            Swal.fire('Preencher com algum ID')
+        
+          }
+          else {
+        fetch(url,{
+            method:'POST', 
+            body:form
+        }).then(response =>{
+            response.json().then(result =>{
+                //console.log(result)
+//                Swal.fire(result.message)
+            if(result.message=="ID não cadastrado"){
+                Swal.fire(result.message).then(result =>{
+                    if(result.isConfirmed){
+                        window.location.href = "loginaluno.html";
+                    }
+                })
+
+            } else {
+
+                Swal.fire({
+                    title: result.message,
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "https://simmer.io/@Abhner/projeto-integrador-jogo-infantil";
+                    }
+                })
+    
+            }
+
+        })
+    }).catch(err => console.log(err))
+
+    }
+}
+    
