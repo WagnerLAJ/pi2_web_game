@@ -2,7 +2,7 @@ showdata ();
 function showdata (){
     console.log("Chegou no JS");
 //    const url = "http://177.62.79.244:4000/PI2/controllers/read.php";
-    const url = "http://187.57.114.226:4000/pi2_web_game/controllers/read.php";
+    const url = "http://4.228.64.55/pi2_web_game/controllers/read.php";//ip_aqui
 fetch(url,{
         method:'GET'
     }).then (response => response.text())
@@ -24,10 +24,8 @@ function createUser(){
     form.append('cpf',cpf);
     form.append('nivel',nivel);
     form.append('pontuacao',pontuacao);
-//    http://177.115.79.131:4000/PI2/view/cadastro.html
-//    const url = "http://177.62.79.244:4000/PI2/controllers/cadastro.php";
-    const url = "http://187.57.114.226:4000/pi2_web_game/controllers/cadastro.php";
-//    const url = "http://187.57.114.226:4000/PI2/controllers/cadastro.php";
+//    const url = "http://177.68.58.142:4000/pi2_web_game/controllers/cadastro.php";//ip_aqui
+    const url = "http://4.228.64.55/pi2_web_game/controllers/cadastro.php";//ip_aqui
 
     if ((name=="")||(cpf=="")||(nivel=="")||(pontuacao=="")) {
 //        console.log("Todos os campos devem estar preenchidos");
@@ -54,7 +52,8 @@ function createUser(){
 function get_id(id){
     const form = new FormData ();
     form.append('id',id);
-    const url = "http://187.57.114.226:4000/pi2_web_game/controllers/get_id.php";
+//    const url = "http://177.68.58.142:4000/pi2_web_game/controllers/get_id.php";//ip_aqui
+    const url = "http://4.228.64.55/pi2_web_game/controllers/get_id.php";//ip_aqui
     fetch(url,{
         method:'POST', 
         body:form
@@ -98,10 +97,8 @@ function updateUser(){
         form.append('cpf',cpf);
         form.append('nivel',nivel);
         form.append('pontuacao',pontuacao);
-    //    http://177.115.79.131:4000/PI2/view/cadastro.html
-    //    const url = "http://177.62.79.244:4000/PI2/controllers/cadastro.php";
-        const url = "http://187.57.114.226:4000/pi2_web_game/controllers/update.php";
-    //    const url = "http://187.57.114.226:4000/PI2/controllers/cadastro.php";
+//        const url = "http://177.68.58.142:4000/pi2_web_game/controllers/update.php";//ip_aqui
+        const url = "http://4.228.64.55/pi2_web_game/controllers/update.php";//ip_aqui
     
         if ((name=="")||(cpf=="")||(nivel=="")||(pontuacao=="")) {
     //        console.log("Todos os campos devem estar preenchidos");
@@ -131,7 +128,8 @@ function updateUser(){
 function remove(id){
     const form = new FormData ();
     form.append('id',id);
-    const url = "http://187.57.114.226:4000/pi2_web_game/controllers/remove.php";
+//    const url = "http://177.68.58.142:4000/pi2_web_game/controllers/remove.php";//ip_aqui
+    const url = "http://4.228.64.55/pi2_web_game/controllers/remove.php";//ip_aqui
     Swal.fire({
         title: 'Você realmente quer deletar este usuário?',
         text: "Esta ação não poderá ser desfeita!",
@@ -179,7 +177,8 @@ function verificaLoginAluno(){
         console.log("verifica login aluno")
     
         const id_login=document.getElementById('id_login').value;
-        const url = "http://187.57.114.226:4000/pi2_web_game/controllers/loginaluno.php";
+//        const url = "http://177.68.58.142:4000/pi2_web_game/controllers/loginaluno.php";//ip_aqui
+        const url = "http://4.228.64.55/pi2_web_game/controllers/loginaluno.php";//ip_aqui
     
         const form = new FormData ();
         form.append('id_login',id_login);
